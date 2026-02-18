@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedSearch UI</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- AUTH PAGE -->
+    <main class="page page-auth" id="authPage">
+      <section class="brand">
+        <div class="brand__icon" aria-hidden="true">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <h1 class="brand__name">MedSearch</h1>
+        <p class="brand__tagline">Dərman axtarış platforması</p>
+      </section>
+
+      <section class="card" aria-live="polite">
+        <!-- LOGIN -->
+        <div class="card__panel" id="loginPanel">
+          <h2 class="card__title">Giriş</h2>
+
+          <form class="form" id="loginForm">
+            <label class="field">
+              <span class="field__label">Email</span>
+              <span class="input">
+                <i class="fa-regular fa-envelope input__icon" aria-hidden="true"></i>
+                <input
+                  class="input__control"
+                  type="email"
+                  placeholder="example@email.com"
+                  autocomplete="email"
+                  required
+                />
+              </span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Şifrə</span>
+              <span class="input">
+                <i class="fa-solid fa-lock input__icon" aria-hidden="true"></i>
+                <input
+                  class="input__control"
+                  type="password"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                  required
+                />
+              </span>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Daxil ol</button>
+
+            <p class="hint">
+              <a class="link link--primary" href="#" id="toRegister">
+                Hesabınız yoxdur? Qeydiyyatdan keçin
+              </a>
+            </p>
+
+            <p class="hint">
+              <a class="link" href="#" id="continueGuestLogin">Qonaq kimi davam et</a>
+            </p>
+          </form>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="card__panel is-hidden" id="registerPanel">
+          <h2 class="card__title">Qeydiyyat</h2>
+
+          <form class="form" id="registerForm">
+            <label class="field">
+              <span class="field__label">Adınız və Soyadınız</span>
+              <span class="input">
+                <i class="fa-regular fa-user input__icon" aria-hidden="true"></i>
+                <input class="input__control" type="text" placeholder="Adınızı daxil edin" required />
+              </span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Email</span>
+              <span class="input">
+                <i class="fa-regular fa-envelope input__icon" aria-hidden="true"></i>
+                <input
+                  class="input__control"
+                  type="email"
+                  placeholder="example@email.com"
+                  autocomplete="email"
+                  required
+                />
+              </span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Şifrə</span>
+              <span class="input">
+                <i class="fa-solid fa-lock input__icon" aria-hidden="true"></i>
+                <input
+                  class="input__control"
+                  type="password"
+                  placeholder="••••••••"
+                  autocomplete="new-password"
+                  required
+                />
+              </span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Şifrəni təsdiqlə</span>
+              <span class="input">
+                <i class="fa-solid fa-lock input__icon" aria-hidden="true"></i>
+                <input
+                  class="input__control"
+                  type="password"
+                  placeholder="••••••••"
+                  autocomplete="new-password"
+                  required
+                />
+              </span>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Qeydiyyatdan keç</button>
+
+            <p class="hint">
+              <a class="link link--primary" href="#" id="toLogin">Artıq hesabınız var? Daxil olun</a>
+            </p>
+
+            <p class="hint">
+              <a class="link" href="#" id="continueGuestRegister">Qonaq kimi davam et</a>
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footnote">Məlumatlarınız təhlükəsizdir və qorunur</footer>
+    </main>
+
+    <!-- HOME PAGE -->
+    <main class="page page-home is-hidden" id="homePage">
+      <header class="nav">
+        <div class="nav__left">
+          <div class="nav__logo" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+          <div class="nav__brand">MedSearch</div>
+        </div>
+
+        <button class="btn btn--pill" type="button">
+          <i class="fa-regular fa-user"></i>
+          Profil
+        </button>
+      </header>
+
+      <section class="hero">
+        <div class="hero__icon" aria-hidden="true">
+          <i class="fa-solid fa-capsules"></i>
+        </div>
+
+        <h1 class="hero__title">Dərmanı asanlıqla tapın</h1>
+        <p class="hero__subtitle">Ən yaxın apteklərdə lazımi dərmanı axtarın</p>
+
+        <div class="search">
+          <span class="search__left" aria-hidden="true">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+
+          <input
+            id="searchInput"
+            class="search__input"
+            type="text"
+            placeholder="Dərman adını daxil edin"
+          />
+
+          <span class="search__mid" aria-hidden="true" title="Səs">
+            <i class="fa-solid fa-microphone"></i>
+          </span>
+
+          <span class="search__mid" aria-hidden="true" title="Kamera">
+            <i class="fa-regular fa-camera"></i>
+          </span>
+
+          <button class="btn btn--primary btn--search" id="searchBtn" type="button">Axtar</button>
+        </div>
+
+        <div class="popular">
+          <div class="popular__label">Populyar axtarışlar:</div>
+          <div class="chips">
+            <button class="chip" type="button">Paracetamol</button>
+            <button class="chip" type="button">Aspirin</button>
+            <button class="chip" type="button">Nurofen</button>
+            <button class="chip" type="button">Vitamin D</button>
+            <button class="chip" type="button">Antibiotik</button>
+          </div>
+        </div>
+
+        <!-- FEATURES (home davamı) -->
+        <section class="features" aria-label="Üstünlüklər">
+          <div class="features__grid">
+            <article class="feature-card" tabindex="0">
+              <div class="feature-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <h3 class="feature-card__title">Sürətli axtarış</h3>
+              <p class="feature-card__text">Dərmanları saniyələr ərzində tapın</p>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <h3 class="feature-card__title">Yaxın apteklər</h3>
+              <p class="feature-card__text">Ən yaxın məsafədəki aptekləri görün</p>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-card__icon" aria-hidden="true">
+                <i class="fa-solid fa-pills"></i>
+              </div>
+              <h3 class="feature-card__title">Qiymət müqayisəsi</h3>
+              <p class="feature-card__text">Ən əlverişli qiymətləri tapın</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footnote">Məlumatlarınız təhlükəsizdir və qorunur</footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
