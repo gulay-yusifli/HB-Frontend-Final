@@ -242,6 +242,365 @@
       <footer class="footnote">Məlumatlarınız təhlükəsizdir və qorunur</footer>
     </main>
 
+    <!-- RESULTS PAGE -->
+    <main class="page page-results is-hidden" id="resultsPage">
+      <header class="topbar">
+        <button class="icon-btn" id="backToHomeBtn" type="button" aria-label="Geri">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="topbar__titles">
+          <div class="topbar__title">Axtarış nəticələri</div>
+          <div class="topbar__subtitle">"<span id="resultsQuery">Paracetamol</span>" üçün</div>
+        </div>
+      </header>
+
+      <section class="results">
+        <div class="results__head">
+          <div class="results__count"><span id="resultsCount">6</span> aptek tapıldı</div>
+
+          <button class="sort" id="sortBtn" type="button" aria-label="Sıralama">
+            <i class="fa-solid fa-up-down"></i>
+            Ucuzdan bahaya
+          </button>
+        </div>
+
+        <div class="results__grid" id="resultsGrid">
+          <article
+            class="ph-card"
+            data-price="12.50"
+            data-name="Təbib Apteki"
+            data-distance="0.5 km uzaqlıqda"
+            data-address="28 May küç., 15, Bakı"
+            data-phone="+994 12 555 11 22"
+            data-lat="40.4093"
+            data-lng="49.8671"
+          >
+            <h3 class="ph-card__title">Təbib Apteki</h3>
+            <div class="pill pill--price">12.50 ₼</div>
+
+            <div class="ph-card__row">
+              <i class="fa-solid fa-location-dot ph-card__icon"></i>
+              <span>0.5 km uzaqlıqda</span>
+            </div>
+
+            <div class="ph-card__addr">28 May küç., 15, Bakı</div>
+
+            <div class="ph-card__actions">
+              <button class="btn btn--primary ph-card__btn" type="button" data-action="details">
+                Detallara bax
+              </button>
+
+              <button class="btn btn--outline ph-card__btn" type="button" data-action="reserve">
+                <i class="fa-regular fa-calendar"></i>
+                Rezervasiya
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="ph-card"
+            data-price="11.80"
+            data-name="Sağlamlıq Apteki"
+            data-distance="0.8 km uzaqlıqda"
+            data-address="Nizami küç., 89, Bakı"
+            data-phone="+994 12 111 22 33"
+            data-lat="40.4012"
+            data-lng="49.8650"
+          >
+            <h3 class="ph-card__title">Sağlamlıq Apteki</h3>
+            <div class="pill pill--price">11.80 ₼</div>
+
+            <div class="ph-card__row">
+              <i class="fa-solid fa-location-dot ph-card__icon"></i>
+              <span>0.8 km uzaqlıqda</span>
+            </div>
+
+            <div class="ph-card__addr">Nizami küç., 89, Bakı</div>
+
+            <div class="ph-card__actions">
+              <button class="btn btn--primary ph-card__btn" type="button" data-action="details">
+                Detallara bax
+              </button>
+
+              <button class="btn btn--outline ph-card__btn" type="button" data-action="reserve">
+                <i class="fa-regular fa-calendar"></i>
+                Rezervasiya
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="ph-card"
+            data-price="12.90"
+            data-name="Yeni Həyat Apteki"
+            data-distance="1.2 km uzaqlıqda"
+            data-address="Azadlıq pros., 45, Bakı"
+            data-phone="+994 12 444 55 66"
+            data-lat="40.4140"
+            data-lng="49.8601"
+          >
+            <h3 class="ph-card__title">Yeni Həyat Apteki</h3>
+
+            <div class="ph-card__row">
+              <i class="fa-solid fa-location-dot ph-card__icon"></i>
+              <span>1.2 km uzaqlıqda</span>
+            </div>
+
+            <div class="ph-card__addr">Azadlıq pros., 45, Bakı</div>
+
+            <div class="ph-card__actions">
+              <button class="btn btn--primary ph-card__btn" type="button" data-action="details">
+                Detallara bax
+              </button>
+
+              <button class="btn btn--outline ph-card__btn" type="button" data-action="reserve">
+                <i class="fa-regular fa-calendar"></i>
+                Rezervasiya
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="ph-card"
+            data-price="13.20"
+            data-name="Mərkəzi Aptek"
+            data-distance="1.5 km uzaqlıqda"
+            data-address="Neftçilər pros., 123, Bakı"
+            data-phone="+994 12 777 88 99"
+            data-lat="40.3951"
+            data-lng="49.8567"
+          >
+            <h3 class="ph-card__title">Mərkəzi Aptek</h3>
+            <div class="pill pill--price">13.20 ₼</div>
+
+            <div class="ph-card__row">
+              <i class="fa-solid fa-location-dot ph-card__icon"></i>
+              <span>1.5 km uzaqlıqda</span>
+            </div>
+
+            <div class="ph-card__addr">Neftçilər pros., 123, Bakı</div>
+
+            <div class="ph-card__actions">
+              <button class="btn btn--primary ph-card__btn" type="button" data-action="details">
+                Detallara bax
+              </button>
+
+              <button class="btn btn--outline ph-card__btn" type="button" data-action="reserve">
+                <i class="fa-regular fa-calendar"></i>
+                Rezervasiya
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="ph-card"
+            data-price="12.00"
+            data-name="Dərman Dünyası"
+            data-distance="2.1 km uzaqlıqda"
+            data-address="Həsən Əliyev küç., 67, Bakı"
+            data-phone="+994 12 222 33 44"
+            data-lat="40.4099"
+            data-lng="49.8732"
+          >
+            <h3 class="ph-card__title">Dərman Dünyası</h3>
+            <div class="pill pill--price">12.00 ₼</div>
+
+            <div class="ph-card__row">
+              <i class="fa-solid fa-location-dot ph-card__icon"></i>
+              <span>2.1 km uzaqlıqda</span>
+            </div>
+
+            <div class="ph-card__addr">Həsən Əliyev küç., 67, Bakı</div>
+
+            <div class="ph-card__actions">
+              <button class="btn btn--primary ph-card__btn" type="button" data-action="details">
+                Detallara bax
+              </button>
+
+              <button class="btn btn--outline ph-card__btn" type="button" data-action="reserve">
+                <i class="fa-regular fa-calendar"></i>
+                Rezervasiya
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="ph-card"
+            data-price="14.10"
+            data-name="Şəfa Apteki"
+            data-distance="2.3 km uzaqlıqda"
+            data-address="Şərifzadə küç., 32, Bakı"
+            data-phone="+994 12 999 00 11"
+            data-lat="40.4201"
+            data-lng="49.8461"
+          >
+            <h3 class="ph-card__title">Şəfa Apteki</h3>
+
+            <div class="ph-card__row">
+              <i class="fa-solid fa-location-dot ph-card__icon"></i>
+              <span>2.3 km uzaqlıqda</span>
+            </div>
+
+            <div class="ph-card__addr">Şərifzadə küç., 32, Bakı</div>
+
+            <div class="ph-card__actions">
+              <button class="btn btn--primary ph-card__btn" type="button" data-action="details">
+                Detallara bax
+              </button>
+
+              <button class="btn btn--outline ph-card__btn" type="button" data-action="reserve">
+                <i class="fa-regular fa-calendar"></i>
+                Rezervasiya
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- PHARMACY DETAILS PAGE -->
+    <main
+      class="page page-detail is-hidden"
+      id="detailPage"
+      data-lat="40.4093"
+      data-lng="49.8671"
+    >
+      <header class="topbar">
+        <button class="icon-btn" id="backToResultsBtn" type="button" aria-label="Geri">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="topbar__titles">
+          <div class="topbar__title">Aptek detalları</div>
+        </div>
+      </header>
+
+      <section class="detail">
+        <article class="detail-card">
+          <h2 class="detail-card__title" id="detailName">Təbib Apteki</h2>
+
+          <div class="pill pill--price detail-card__pill" id="detailPrice">Qiymət: 12.50 ₼</div>
+
+          <div class="detail-card__section">
+            <div class="detail-item">
+              <i class="fa-solid fa-location-dot detail-item__icon"></i>
+              <div class="detail-item__body">
+                <div class="detail-item__label">Ünvan</div>
+                <div class="detail-item__text" id="detailAddress">28 May küç., 15, Bakı</div>
+                <a class="detail-item__link" href="#" id="detailDistance">0.5 km uzaqlıqda</a>
+              </div>
+            </div>
+          </div>
+
+          <hr class="detail-card__hr" />
+
+          <div class="detail-card__section">
+            <div class="detail-item">
+              <i class="fa-solid fa-phone detail-item__icon"></i>
+              <div class="detail-item__body">
+                <div class="detail-item__label">Telefon</div>
+                <a class="detail-item__link" href="tel:+994125551122" id="detailPhone">+994 12 555 11 22</a>
+              </div>
+            </div>
+          </div>
+
+          <hr class="detail-card__hr" />
+
+          <div class="detail-card__section">
+            <div class="detail-item">
+              <i class="fa-regular fa-clock detail-item__icon"></i>
+              <div class="detail-item__body">
+                <div class="detail-item__label">İş saatları</div>
+                <div class="detail-item__text" id="detailHours">
+                  Bazar ertəsi - Cümə: 08:00 - 22:00<br />
+                  Şənbə - Bazar: 09:00 - 20:00
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-actions">
+            <button class="btn btn--primary detail-actions__btn" id="callBtn" type="button">
+              <i class="fa-solid fa-phone"></i>
+              Zəng et
+            </button>
+
+            <button class="btn btn--outline detail-actions__btn" id="directionsBtn" type="button">
+              <i class="fa-solid fa-location-arrow"></i>
+              İstiqamətlər
+            </button>
+
+            <button class="btn btn--purple detail-actions__btn" id="openChatBtn" type="button">
+              <i class="fa-regular fa-comment-dots"></i>
+              Konsultasiya
+            </button>
+          </div>
+        </article>
+
+        <!-- Online Konsultasiya (Chat) -->
+        <section class="chat is-hidden" id="chatWidget" aria-label="Online Konsultasiya">
+          <header class="chat__head">
+            <div class="chat__head-left">
+              <i class="fa-regular fa-comment-dots chat__head-icon" aria-hidden="true"></i>
+              <span class="chat__head-title">Online Konsultasiya</span>
+            </div>
+
+            <button class="chat__close" id="chatCloseBtn" type="button" aria-label="Bağla">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </header>
+
+          <div class="chat__body" id="chatBody">
+            <div class="msg msg--user">
+              <div class="msg__bubble">salam</div>
+            </div>
+
+            <div class="msg msg--bot">
+              <div class="msg__bubble">Salam! Sizə necə kömək edə bilərəm?</div>
+            </div>
+
+            <div class="msg msg--user">
+              <div class="msg__bubble">basim agrıyır</div>
+            </div>
+
+            <div class="msg msg--bot">
+              <div class="msg__bubble">Salam! Sizə necə kömək edə bilərəm?</div>
+            </div>
+          </div>
+
+          <form class="chat__foot" id="chatForm">
+            <input
+              class="chat__input"
+              id="chatInput"
+              type="text"
+              placeholder="Mesajınızı yazın..."
+              autocomplete="off"
+            />
+            <button class="chat__send" type="submit">Göndər</button>
+          </form>
+        </section>
+
+        <article class="map-card">
+          <div class="map-card__head">Xəritədə yeri</div>
+          <div class="map-card__body">
+            <div class="map-placeholder" role="img" aria-label="Google Maps inteqrasiyası">
+              <div class="map-placeholder__icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="map-placeholder__title">Google Maps Inteqrasiyası</div>
+              <div class="map-placeholder__sub" id="coordsText">Koordinatlar: 40.4093, 49.8671</div>
+              <button class="btn btn--primary map-placeholder__btn" id="openMapsBtn" type="button">
+                Google Maps-da aç
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <div class="note">
+          <strong>Qeyd:</strong> Dərmanın mövcudluğunu təsdiqləmək üçün zəng edərək soruşun.
+        </div>
+      </section>
+    </main>
+
     <script src="./app.js"></script>
   </body>
 </html>
