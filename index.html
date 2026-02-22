@@ -161,7 +161,7 @@
           <div class="nav__brand">MedSearch</div>
         </div>
 
-        <button class="btn btn--pill" type="button">
+        <button class="btn btn--pill" id="openProfileBtn" type="button">
           <i class="fa-regular fa-user"></i>
           Profil
         </button>
@@ -559,14 +559,6 @@
             <div class="msg msg--bot">
               <div class="msg__bubble">Salam! Sizə necə kömək edə bilərəm?</div>
             </div>
-
-            <div class="msg msg--user">
-              <div class="msg__bubble">basim agrıyır</div>
-            </div>
-
-            <div class="msg msg--bot">
-              <div class="msg__bubble">Salam! Sizə necə kömək edə bilərəm?</div>
-            </div>
           </div>
 
           <form class="chat__foot" id="chatForm">
@@ -598,6 +590,216 @@
         <div class="note">
           <strong>Qeyd:</strong> Dərmanın mövcudluğunu təsdiqləmək üçün zəng edərək soruşun.
         </div>
+      </section>
+    </main>
+
+    <!-- PROFILE PAGE -->
+    <main class="page page-profile is-hidden" id="profilePage">
+      <header class="topbar">
+        <button class="icon-btn" id="backToHomeFromProfileBtn" type="button" aria-label="Geri">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="topbar__titles">
+          <div class="topbar__title">Profil</div>
+        </div>
+
+        <button class="profile-exit" id="logoutBtn" type="button">Çıxış</button>
+      </header>
+
+      <section class="profile">
+        <article class="user-card">
+          <div class="user-card__avatar" aria-hidden="true">
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div class="user-card__info">
+            <div class="user-card__name" id="profileName">İstifadəçi</div>
+            <div class="user-card__email" id="profileEmail">user@example.com</div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <header class="panel__head panel__head--teal">
+            <div class="panel__head-left">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Günlük Dərman Cədvəli</span>
+            </div>
+          </header>
+
+          <div class="panel__body panel__body--teal" id="dailySchedule">
+            <div class="schedule-item">
+              <div class="schedule-item__left">
+                <div class="schedule-item__icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="schedule-item__main">
+                  <div class="schedule-item__time">08:00</div>
+                  <div class="schedule-item__drug">
+                    <i class="fa-solid fa-capsules"></i>
+                    Metformin <span class="schedule-item__dose">(500mg)</span>
+                  </div>
+                </div>
+              </div>
+              <button class="schedule-item__bell" type="button" title="Xatırlatma">
+                <i class="fa-regular fa-bell"></i>
+              </button>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-item__left">
+                <div class="schedule-item__icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="schedule-item__main">
+                  <div class="schedule-item__time">09:00</div>
+                  <div class="schedule-item__drug">
+                    <i class="fa-solid fa-capsules"></i>
+                    Lisinopril <span class="schedule-item__dose">(10mg)</span>
+                  </div>
+                </div>
+              </div>
+              <button class="schedule-item__bell" type="button" title="Xatırlatma">
+                <i class="fa-regular fa-bell"></i>
+              </button>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-item__left">
+                <div class="schedule-item__icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="schedule-item__main">
+                  <div class="schedule-item__time">20:00</div>
+                  <div class="schedule-item__drug">
+                    <i class="fa-solid fa-capsules"></i>
+                    Metformin <span class="schedule-item__dose">(500mg)</span>
+                  </div>
+                </div>
+              </div>
+              <button class="schedule-item__bell" type="button" title="Xatırlatma">
+                <i class="fa-regular fa-bell"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <header class="panel__head panel__head--light">
+            <div class="panel__head-left">
+              <i class="fa-regular fa-bell"></i>
+              <span>Dərman Xatırlatmaları</span>
+            </div>
+
+            <button class="btn btn--primary panel__add" id="addReminderBtn" type="button">
+              <i class="fa-solid fa-plus"></i>
+              Əlavə et
+            </button>
+          </header>
+
+          <div class="panel__body" id="remindersList">
+            <div class="info-box">
+              <strong>Xroniki xəstəliklər üçün:</strong> Dərmanlarınızı vaxtında qəbul etməyi unutmayın!
+            </div>
+
+            <article class="reminder-card" data-reminder-id="1">
+              <div class="reminder-card__left">
+                <div class="reminder-card__icon"><i class="fa-solid fa-capsules"></i></div>
+                <div class="reminder-card__main">
+                  <div class="reminder-card__title">Metformin</div>
+                  <div class="reminder-card__sub">500mg</div>
+                  <div class="reminder-card__meta">
+                    <i class="fa-regular fa-clock"></i>
+                    Gündə 2 dəfə - 08:00, 20:00
+                  </div>
+                  <div class="tag tag--purple">Şəkərli diabet</div>
+                </div>
+              </div>
+
+              <div class="reminder-card__actions">
+                <button class="icon-square" type="button" title="Bildiriş">
+                  <i class="fa-regular fa-bell"></i>
+                </button>
+                <button class="icon-trash" type="button" data-action="delete-reminder" title="Sil">
+                  <i class="fa-regular fa-trash-can"></i>
+                </button>
+              </div>
+            </article>
+
+            <article class="reminder-card" data-reminder-id="2">
+              <div class="reminder-card__left">
+                <div class="reminder-card__icon"><i class="fa-solid fa-capsules"></i></div>
+                <div class="reminder-card__main">
+                  <div class="reminder-card__title">Lisinopril</div>
+                  <div class="reminder-card__sub">10mg</div>
+                  <div class="reminder-card__meta">
+                    <i class="fa-regular fa-clock"></i>
+                    Gündə 1 dəfə - 09:00
+                  </div>
+                  <div class="tag tag--purple">Hipertoniya</div>
+                </div>
+              </div>
+
+              <div class="reminder-card__actions">
+                <button class="icon-square" type="button" title="Bildiriş">
+                  <i class="fa-regular fa-bell"></i>
+                </button>
+                <button class="icon-trash" type="button" data-action="delete-reminder" title="Sil">
+                  <i class="fa-regular fa-trash-can"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+        </article>
+
+        <footer class="profile-footnote">
+          🔒 Məlumatlarınız təhlükəsizdir. MedSearch PII və ya həssas məlumatları toplamaq üçün nəzərdə tutulmayıb.
+        </footer>
+
+        <!-- Add Reminder Modal -->
+<div class="modal is-hidden" id="reminderModal" aria-hidden="true">
+  <div class="modal__backdrop" data-action="close-modal"></div>
+
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Dərman əlavə et">
+    <header class="modal__head">
+      <div class="modal__title">Dərman əlavə et</div>
+      <button class="modal__close" type="button" data-action="close-modal" aria-label="Bağla">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
+
+    <form class="modal__body" id="reminderForm">
+      <label class="mfield">
+        <span class="mfield__label">Dərman adı</span>
+        <input class="minput" id="medName" type="text" placeholder="Məs: Metformin" required />
+      </label>
+
+      <div class="mgrid">
+        <label class="mfield">
+          <span class="mfield__label">Doza</span>
+          <input class="minput" id="medDose" type="text" placeholder="Məs: 500mg" required />
+        </label>
+
+        <label class="mfield">
+          <span class="mfield__label">Gündə neçə dəfə</span>
+          <select class="minput" id="medTimes" required>
+            <option value="1">1 dəfə</option>
+            <option value="2" selected>2 dəfə</option>
+            <option value="3">3 dəfə</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="mfield">
+        <span class="mfield__label">Saatlar (vergüllə)</span>
+        <input class="minput" id="medHours" type="text" placeholder="Məs: 08:00, 20:00" required />
+      </label>
+
+      <label class="mfield">
+        <span class="mfield__label">Kateqoriya (istəyə görə)</span>
+        <input class="minput" id="medTag" type="text" placeholder="Məs: Hipertoniya" />
+      </label>
+
+      <footer class="modal__foot">
+        <button class="btn btn--outline" type="button" data-action="close-modal">Ləğv et</button>
+        <button class="btn btn--primary" type="submit">Yadda saxla</button>
+      </footer>
+    </form>
+  </div>
+</div>
       </section>
     </main>
 
